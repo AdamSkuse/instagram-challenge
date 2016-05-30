@@ -297,3 +297,219 @@ Processing by PostsController#show as HTML
   Rendered posts/show.html.haml within layouts/application (2.1ms)
 Completed 200 OK in 17ms (Views: 5.1ms | ActiveRecord: 0.1ms)
   [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2016-05-30 16:26:55 +0100
+Processing by PostsController#index as HTML
+  Rendered posts/index.html.haml within layouts/application (1.7ms)
+Completed 200 OK in 222ms (Views: 214.6ms | ActiveRecord: 0.0ms)
+Started GET "/posts/new" for 127.0.0.1 at 2016-05-30 16:26:55 +0100
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.haml within layouts/application (35.5ms)
+Completed 200 OK in 46ms (Views: 39.1ms | ActiveRecord: 0.2ms)
+Started POST "/posts" for 127.0.0.1 at 2016-05-30 16:26:56 +0100
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "post"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x007f8e9f0ca2f8 @tempfile=#<Tempfile:/var/folders/s1/sv87gnj97zg5kjfltztfq4rh0000gn/T/RackMultipart20160530-12235-1m86osj.jpg>, @original_filename="dog1.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"post[image]\"; filename=\"dog1.jpg\"\r\nContent-Type: image/jpeg\r\nContent-Length: 85168\r\n">, "caption"=>"#hathound"}, "commit"=>"Create Post"}
+Command :: file -b --mime '/var/folders/s1/sv87gnj97zg5kjfltztfq4rh0000gn/T/6be237a000de33e2076acc5c25c3661720160530-12235-1j31j99.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/s1/sv87gnj97zg5kjfltztfq4rh0000gn/T/6be237a000de33e2076acc5c25c3661720160530-12235-1cysjqp.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/s1/sv87gnj97zg5kjfltztfq4rh0000gn/T/6be237a000de33e2076acc5c25c3661720160530-12235-1cysjqp.jpg[0]'
+Command :: convert '/var/folders/s1/sv87gnj97zg5kjfltztfq4rh0000gn/T/6be237a000de33e2076acc5c25c3661720160530-12235-1cysjqp.jpg[0]' -auto-orient -resize "640" '/var/folders/s1/sv87gnj97zg5kjfltztfq4rh0000gn/T/88a1db12df544830f66a74a4e969403720160530-12235-1fj6lck'
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+Command :: file -b --mime '/var/folders/s1/sv87gnj97zg5kjfltztfq4rh0000gn/T/6be237a000de33e2076acc5c25c3661720160530-12235-x12j7p.jpg'
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "posts" ("caption", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["caption", "#hathound"], ["image_file_name", "dog1.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 85168], ["image_updated_at", "2016-05-30 15:26:56.012808"], ["created_at", "2016-05-30 15:26:56.128605"], ["updated_at", "2016-05-30 15:26:56.128605"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/posts/1
+Completed 302 Found in 140ms (ActiveRecord: 0.7ms)
+Started GET "/posts/1" for 127.0.0.1 at 2016-05-30 16:26:56 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered posts/show.html.haml within layouts/application (2.3ms)
+Completed 200 OK in 14ms (Views: 5.9ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2016-05-30 16:33:38 +0100
+Processing by PostsController#index as HTML
+  Rendered posts/index.html.haml within layouts/application (1.7ms)
+Completed 200 OK in 204ms (Views: 196.7ms | ActiveRecord: 0.0ms)
+Started GET "/posts/new" for 127.0.0.1 at 2016-05-30 16:33:39 +0100
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.haml within layouts/application (34.5ms)
+Completed 200 OK in 61ms (Views: 36.6ms | ActiveRecord: 0.2ms)
+Started POST "/posts" for 127.0.0.1 at 2016-05-30 16:33:39 +0100
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "post"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x007fbf444c8910 @tempfile=#<Tempfile:/var/folders/s1/sv87gnj97zg5kjfltztfq4rh0000gn/T/RackMultipart20160530-12303-1bpn9l6.jpg>, @original_filename="dog1.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"post[image]\"; filename=\"dog1.jpg\"\r\nContent-Type: image/jpeg\r\nContent-Length: 85168\r\n">, "caption"=>"#hathound"}, "commit"=>"Create Post"}
+Command :: file -b --mime '/var/folders/s1/sv87gnj97zg5kjfltztfq4rh0000gn/T/6be237a000de33e2076acc5c25c3661720160530-12303-9s52q3.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/s1/sv87gnj97zg5kjfltztfq4rh0000gn/T/6be237a000de33e2076acc5c25c3661720160530-12303-icmsia.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/s1/sv87gnj97zg5kjfltztfq4rh0000gn/T/6be237a000de33e2076acc5c25c3661720160530-12303-icmsia.jpg[0]'
+Command :: convert '/var/folders/s1/sv87gnj97zg5kjfltztfq4rh0000gn/T/6be237a000de33e2076acc5c25c3661720160530-12303-icmsia.jpg[0]' -auto-orient -resize "640" '/var/folders/s1/sv87gnj97zg5kjfltztfq4rh0000gn/T/aef5ddcf71e9023822b072bf9023f07a20160530-12303-1lxyj04'
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+Command :: file -b --mime '/var/folders/s1/sv87gnj97zg5kjfltztfq4rh0000gn/T/6be237a000de33e2076acc5c25c3661720160530-12303-1v0z3jh.jpg'
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "posts" ("caption", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["caption", "#hathound"], ["image_file_name", "dog1.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 85168], ["image_updated_at", "2016-05-30 15:33:39.279644"], ["created_at", "2016-05-30 15:33:39.391287"], ["updated_at", "2016-05-30 15:33:39.391287"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/posts/1
+Completed 302 Found in 129ms (ActiveRecord: 0.7ms)
+Started GET "/posts/1" for 127.0.0.1 at 2016-05-30 16:33:39 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered posts/show.html.haml within layouts/application (2.8ms)
+Completed 200 OK in 16ms (Views: 6.4ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2016-05-30 16:35:50 +0100
+Processing by PostsController#index as HTML
+  Rendered posts/index.html.haml within layouts/application (1.8ms)
+Completed 200 OK in 219ms (Views: 212.1ms | ActiveRecord: 0.0ms)
+Started GET "/posts/new" for 127.0.0.1 at 2016-05-30 16:35:50 +0100
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.haml within layouts/application (34.4ms)
+Completed 200 OK in 45ms (Views: 37.7ms | ActiveRecord: 0.2ms)
+Started POST "/posts" for 127.0.0.1 at 2016-05-30 16:35:50 +0100
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "post"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x007fe1b3c645e8 @tempfile=#<Tempfile:/var/folders/s1/sv87gnj97zg5kjfltztfq4rh0000gn/T/RackMultipart20160530-12425-9ngbds.jpg>, @original_filename="dog1.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"post[image]\"; filename=\"dog1.jpg\"\r\nContent-Type: image/jpeg\r\nContent-Length: 85168\r\n">, "caption"=>"#hathound"}, "commit"=>"Create Post"}
+Command :: file -b --mime '/var/folders/s1/sv87gnj97zg5kjfltztfq4rh0000gn/T/6be237a000de33e2076acc5c25c3661720160530-12425-1mi0xd4.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/s1/sv87gnj97zg5kjfltztfq4rh0000gn/T/6be237a000de33e2076acc5c25c3661720160530-12425-u28f63.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/s1/sv87gnj97zg5kjfltztfq4rh0000gn/T/6be237a000de33e2076acc5c25c3661720160530-12425-u28f63.jpg[0]'
+Command :: convert '/var/folders/s1/sv87gnj97zg5kjfltztfq4rh0000gn/T/6be237a000de33e2076acc5c25c3661720160530-12425-u28f63.jpg[0]' -auto-orient -resize "640" '/var/folders/s1/sv87gnj97zg5kjfltztfq4rh0000gn/T/829b26b7d73e0a702695eafdcba5996d20160530-12425-xolfm'
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+Command :: file -b --mime '/var/folders/s1/sv87gnj97zg5kjfltztfq4rh0000gn/T/6be237a000de33e2076acc5c25c3661720160530-12425-1uycv6a.jpg'
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "posts" ("caption", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["caption", "#hathound"], ["image_file_name", "dog1.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 85168], ["image_updated_at", "2016-05-30 15:35:50.518169"], ["created_at", "2016-05-30 15:35:50.632816"], ["updated_at", "2016-05-30 15:35:50.632816"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/posts/1
+Completed 302 Found in 128ms (ActiveRecord: 0.6ms)
+Started GET "/posts/1" for 127.0.0.1 at 2016-05-30 16:35:50 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered posts/show.html.haml within layouts/application (2.6ms)
+Completed 200 OK in 15ms (Views: 6.5ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2016-05-30 16:35:50 +0100
+Processing by PostsController#index as HTML
+  Rendered posts/index.html.haml within layouts/application (0.2ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+Started GET "/posts/new" for 127.0.0.1 at 2016-05-30 16:35:50 +0100
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.haml within layouts/application (7.2ms)
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.0ms)
+Started POST "/posts" for 127.0.0.1 at 2016-05-30 16:35:50 +0100
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "post"=>{"caption"=>"No picture because YOLO"}, "commit"=>"Create Post"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("caption", "created_at", "updated_at") VALUES (?, ?, ?)  [["caption", "No picture because YOLO"], ["created_at", "2016-05-30 15:35:50.696463"], ["updated_at", "2016-05-30 15:35:50.696463"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/posts/1
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+Started GET "/posts/1" for 127.0.0.1 at 2016-05-30 16:35:50 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.9ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered posts/show.html.haml within layouts/application (0.4ms)
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 0.9ms)
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2016-05-30 16:37:57 +0100
+Processing by PostsController#index as HTML
+  Rendered posts/index.html.haml within layouts/application (1.7ms)
+Completed 200 OK in 223ms (Views: 215.7ms | ActiveRecord: 0.0ms)
+Started GET "/posts/new" for 127.0.0.1 at 2016-05-30 16:37:57 +0100
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.haml within layouts/application (33.8ms)
+Completed 200 OK in 44ms (Views: 37.8ms | ActiveRecord: 0.3ms)
+Started POST "/posts" for 127.0.0.1 at 2016-05-30 16:37:57 +0100
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "post"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x007fddb2e84468 @tempfile=#<Tempfile:/var/folders/s1/sv87gnj97zg5kjfltztfq4rh0000gn/T/RackMultipart20160530-12470-1scybdg.jpg>, @original_filename="dog1.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"post[image]\"; filename=\"dog1.jpg\"\r\nContent-Type: image/jpeg\r\nContent-Length: 85168\r\n">, "caption"=>"#hathound"}, "commit"=>"Create Post"}
+Command :: file -b --mime '/var/folders/s1/sv87gnj97zg5kjfltztfq4rh0000gn/T/6be237a000de33e2076acc5c25c3661720160530-12470-bukqr1.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/s1/sv87gnj97zg5kjfltztfq4rh0000gn/T/6be237a000de33e2076acc5c25c3661720160530-12470-1vtdulw.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/s1/sv87gnj97zg5kjfltztfq4rh0000gn/T/6be237a000de33e2076acc5c25c3661720160530-12470-1vtdulw.jpg[0]'
+Command :: convert '/var/folders/s1/sv87gnj97zg5kjfltztfq4rh0000gn/T/6be237a000de33e2076acc5c25c3661720160530-12470-1vtdulw.jpg[0]' -auto-orient -resize "640" '/var/folders/s1/sv87gnj97zg5kjfltztfq4rh0000gn/T/e708335679f129e07b1ba102a786141120160530-12470-1ry6jl9'
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+Command :: file -b --mime '/var/folders/s1/sv87gnj97zg5kjfltztfq4rh0000gn/T/6be237a000de33e2076acc5c25c3661720160530-12470-1x2irmf.jpg'
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "posts" ("caption", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["caption", "#hathound"], ["image_file_name", "dog1.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 85168], ["image_updated_at", "2016-05-30 15:37:57.548595"], ["created_at", "2016-05-30 15:37:57.654281"], ["updated_at", "2016-05-30 15:37:57.654281"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/posts/1
+Completed 302 Found in 125ms (ActiveRecord: 0.6ms)
+Started GET "/posts/1" for 127.0.0.1 at 2016-05-30 16:37:57 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered posts/show.html.haml within layouts/application (2.1ms)
+Completed 200 OK in 15ms (Views: 5.1ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2016-05-30 16:37:57 +0100
+Processing by PostsController#index as HTML
+  Rendered posts/index.html.haml within layouts/application (0.5ms)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+Started GET "/posts/new" for 127.0.0.1 at 2016-05-30 16:37:57 +0100
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.haml within layouts/application (6.0ms)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.0ms)
+Started POST "/posts" for 127.0.0.1 at 2016-05-30 16:37:57 +0100
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "post"=>{"caption"=>"blergh"}, "commit"=>"Create Post"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Redirected to http://www.example.com/posts
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+Started GET "/posts" for 127.0.0.1 at 2016-05-30 16:37:57 +0100
+Processing by PostsController#index as HTML
+  Rendered posts/index.html.haml within layouts/application (0.3ms)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2016-05-30 16:52:59 +0100
+Processing by PostsController#index as HTML
+  Rendered posts/index.html.haml within layouts/application (1.7ms)
+Completed 200 OK in 222ms (Views: 214.4ms | ActiveRecord: 0.0ms)
+Started GET "/posts/new" for 127.0.0.1 at 2016-05-30 16:53:00 +0100
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.haml within layouts/application (35.0ms)
+Completed 200 OK in 46ms (Views: 39.2ms | ActiveRecord: 0.2ms)
+Started POST "/posts" for 127.0.0.1 at 2016-05-30 16:53:00 +0100
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "post"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x007f87aea1d438 @tempfile=#<Tempfile:/var/folders/s1/sv87gnj97zg5kjfltztfq4rh0000gn/T/RackMultipart20160530-12604-1t7w2lo.jpg>, @original_filename="dog1.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"post[image]\"; filename=\"dog1.jpg\"\r\nContent-Type: image/jpeg\r\nContent-Length: 85168\r\n">, "caption"=>"#hathound"}, "commit"=>"Create Post"}
+Command :: file -b --mime '/var/folders/s1/sv87gnj97zg5kjfltztfq4rh0000gn/T/6be237a000de33e2076acc5c25c3661720160530-12604-1klyc6i.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/s1/sv87gnj97zg5kjfltztfq4rh0000gn/T/6be237a000de33e2076acc5c25c3661720160530-12604-vbtp13.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/s1/sv87gnj97zg5kjfltztfq4rh0000gn/T/6be237a000de33e2076acc5c25c3661720160530-12604-vbtp13.jpg[0]'
+Command :: convert '/var/folders/s1/sv87gnj97zg5kjfltztfq4rh0000gn/T/6be237a000de33e2076acc5c25c3661720160530-12604-vbtp13.jpg[0]' -auto-orient -resize "640" '/var/folders/s1/sv87gnj97zg5kjfltztfq4rh0000gn/T/ad7a5046386dc06e4bae9bdd9cbbe3f920160530-12604-1lzkf1a'
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+Command :: file -b --mime '/var/folders/s1/sv87gnj97zg5kjfltztfq4rh0000gn/T/6be237a000de33e2076acc5c25c3661720160530-12604-1yifhal.jpg'
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "posts" ("caption", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["caption", "#hathound"], ["image_file_name", "dog1.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 85168], ["image_updated_at", "2016-05-30 15:53:00.227330"], ["created_at", "2016-05-30 15:53:00.336597"], ["updated_at", "2016-05-30 15:53:00.336597"]]
+  [1m[36m (0.9ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/posts/1
+Completed 302 Found in 130ms (ActiveRecord: 1.5ms)
+Started GET "/posts/1" for 127.0.0.1 at 2016-05-30 16:53:00 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered posts/show.html.haml within layouts/application (2.4ms)
+Completed 200 OK in 14ms (Views: 5.8ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2016-05-30 16:53:00 +0100
+Processing by PostsController#index as HTML
+  Rendered posts/index.html.haml within layouts/application (1.0ms)
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+Started GET "/posts/new" for 127.0.0.1 at 2016-05-30 16:53:00 +0100
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.haml within layouts/application (11.8ms)
+Completed 200 OK in 14ms (Views: 13.5ms | ActiveRecord: 0.0ms)
+Started POST "/posts" for 127.0.0.1 at 2016-05-30 16:53:00 +0100
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "post"=>{"caption"=>"blergh"}, "commit"=>"Create Post"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered posts/new.html.haml within layouts/application (6.6ms)
+Completed 200 OK in 14ms (Views: 9.1ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
